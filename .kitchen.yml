@@ -5,13 +5,18 @@ provisioner:
   name: chef_zero
 
 platforms:
-- name: centos-5.11
-- name: centos-6.6
-- name: centos-7.1
-- name: fedora-21
-- name: debian-7.8
-- name: ubuntu-12.04
+- name: centos-5
+- name: centos-6
+- name: centos-7
+- name: fedora-27
+- name: fedora-28
+- name: debian-8
+- name: debian-9
+- name: oracle-6
+- name: oracle-7
 - name: ubuntu-14.04
+- name: ubuntu-16.04
+- name: ubuntu-18.04
 
 suites:
 - name: default
@@ -26,8 +31,8 @@ suites:
       dns:
         server: '8.8.8.8'
       dhcp:
-        dhcp-range: 'eth1,10.0.0.5,10.0.0.15,12h'
+        dhcp-range: 'eth0,10.0.0.5,10.0.0.15,12h'
         domain: 'test.lab'
         tftp-root: '/var/lib/tftpboot'
         enable-tftp: null
-        interface: 'eth1'
+        interface: 'eth0'
